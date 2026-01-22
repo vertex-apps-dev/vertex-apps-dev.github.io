@@ -7,7 +7,6 @@ body {
   font-family: "Noto Sans JP", system-ui, sans-serif;
   color: #222;
   line-height: 1.7;
-  background: #ffffff;
 }
 
 /* ===== Header ===== */
@@ -43,10 +42,6 @@ body {
   font-size: 14px;
 }
 
-.nav a:hover {
-  text-decoration: underline;
-}
-
 /* ===== Hero ===== */
 
 .hero {
@@ -66,11 +61,6 @@ body {
   margin-bottom: 16px;
 }
 
-.hero p {
-  max-width: 640px;
-  margin: 0 auto 32px;
-}
-
 /* ===== Content ===== */
 
 .content {
@@ -88,11 +78,6 @@ body {
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
-  font-size: 14px;
-}
-
-.btn:hover {
-  opacity: 0.9;
 }
 
 /* ===== Footer ===== */
@@ -112,29 +97,51 @@ body {
   padding: 120px 32px;
 }
 
-.notfound h1 {
-  font-size: 48px;
-  margin-bottom: 16px;
+/* ===== Loading (Disney-style) ===== */
+
+#loading {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
 }
 
-/* ===== Responsive ===== */
+.loading-box {
+  width: 260px;
+  text-align: center;
+}
 
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.loading-box img {
+  width: 72px;
+  margin-bottom: 20px;
+}
 
-  .nav {
-    margin-top: 8px;
-  }
+#loading-text {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
 
-  .nav a {
-    margin-left: 0;
-    margin-right: 16px;
-  }
+.loading-bar {
+  width: 100%;
+  height: 6px;
+  background: #e5e5e5;
+  border-radius: 3px;
+  overflow: hidden;
+}
 
-  .hero h1 {
-    font-size: 22px;
-  }
+.loading-bar span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #3cb371, #1e90ff);
+  transition: width 0.3s ease;
+}
+
+#loading.loaded {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
 }
