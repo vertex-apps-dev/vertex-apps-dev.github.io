@@ -71,6 +71,14 @@ body {
   margin: 0 auto 32px;
 }
 
+/* ===== Content ===== */
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 64px 32px;
+}
+
 /* ===== Button ===== */
 
 .btn {
@@ -87,18 +95,6 @@ body {
   opacity: 0.9;
 }
 
-/* ===== Content ===== */
-
-.content {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 64px 32px;
-}
-
-.content h2 {
-  margin-bottom: 16px;
-}
-
 /* ===== Footer ===== */
 
 .footer {
@@ -107,6 +103,18 @@ body {
   border-top: 1px solid #e5e5e5;
   font-size: 13px;
   color: #666;
+}
+
+/* ===== 404 ===== */
+
+.notfound {
+  text-align: center;
+  padding: 120px 32px;
+}
+
+.notfound h1 {
+  font-size: 48px;
+  margin-bottom: 16px;
 }
 
 /* ===== Responsive ===== */
