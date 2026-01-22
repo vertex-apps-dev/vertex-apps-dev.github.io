@@ -14,3 +14,28 @@ document.addEventListener("DOMContentLoaded", () => {
     </nav>
   `;
 });
+
+/* ===== Disney-style Loading ===== */
+
+let progress = 0;
+const text = document.getElementById("loading-text");
+const bar = document.getElementById("loading-progress");
+
+const fakeLoading = setInterval(() => {
+  if (progress < 90) {
+    progress += Math.floor(Math.random() * 5) + 1;
+    if (progress > 90) progress = 90;
+    bar.style.width = progress + "%";
+    text.textContent = `Loading... ${progress}%`;
+  }
+}, 300);
+
+window.addEventListener("load", () => {
+  clearInterval(fakeLoading);
+  bar.style.width = "100%";
+  text.textContent = "Loading... 100%";
+
+  setTimeout(() => {
+    document.getElementById("loading").classList.add("loaded");
+  }, 400);
+});
