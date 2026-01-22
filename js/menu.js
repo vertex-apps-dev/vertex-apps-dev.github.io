@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("site-header");
+
   if (header) {
     header.innerHTML = `
       <div class="header-left">
@@ -15,11 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-/* ===== Loading control ===== */
+/* ===== Loading ===== */
 
 window.addEventListener("load", () => {
   const loading = document.getElementById("loading");
-  if (loading) {
-    loading.classList.add("loaded");
-  }
+  if (!loading) return;
+
+  loading.classList.add("loaded");
 });
